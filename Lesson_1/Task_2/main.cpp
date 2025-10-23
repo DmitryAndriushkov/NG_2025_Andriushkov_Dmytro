@@ -9,50 +9,55 @@ int main()
     short userOption = 0;
     float firstNum = 0;
     float secondNum = 0;
-    float result = 0;
 
     cout << "Hello, this is a simple calculator" << endl << endl;
-    cout << "Options:\n1) Addition\n2) Subtraction\n3) Multiplication\n4) Division\n5) Find degree of number\n6) Square root of number" << endl;
+    cout << "Options:"
+             << endl << "1) Addition"
+             << endl << "2) Subtraction"
+             << endl << "3) Multiplication"
+             << endl << "4) Division"
+             << endl << "5) Find degree of number"
+             << endl << "6) Square root of number" << endl;
 
-    cout << "\nSelect option: ";
+    cout << endl << "Select option: ";
     cin >> userOption;
 
     if(userOption <= 5){
-        cout << "\nFirst number: ";
+        cout << endl << "First number: ";
         cin >> firstNum;
         cout << "Second number: ";
         cin >> secondNum;
 
+        cout << endl <<  "Result: ";
         switch(userOption){
             case 1:
-                result = firstNum + secondNum;
+                cout << firstNum + secondNum;
                 break;
 
             case 2:
-                result = firstNum - secondNum;
+                cout << firstNum - secondNum;
                 break;
 
             case 3:
-                result = firstNum * secondNum;
+                cout << firstNum * secondNum;
                 break;
 
             case 4:
-                result = firstNum / secondNum;
+                cout << firstNum / secondNum;
                 break;
 
             case 5:
-                result = pow(firstNum, secondNum);
+                cout << pow(firstNum, secondNum);
                 break;
 
         }
     } else if(userOption == 6){
-        cout << "\nSquare root of: ";
+        cout << endl << "Square root of: ";
         cin >> firstNum;
-        result = sqrt(firstNum);
+        cout << "Result: " << sqrt(firstNum);
     }
     else{
         cout << "Invalid option";
     }
-    cout << "\nResult: " << result << endl;
     return 0;
 }
