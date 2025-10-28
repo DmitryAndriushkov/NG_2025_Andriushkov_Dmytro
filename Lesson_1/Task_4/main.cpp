@@ -14,25 +14,22 @@ int main()
     cout << "Select a polygon: ";
     cin >> userInput;
 
+    if(userInput > 2){
+        cout << "Invalid input" << endl;
+        return 0;
+    }
+
     cout << endl << "Enter a size of polygon you selected: ";
     cin >> userSizeInput;
 
-    if (userInput == 1){
-        for(int column = 1; column <= userSizeInput; column++){
-            for(int row = 0; row < column; row++){
-                cout << "*";
+    for(int column = 1; column <= userSizeInput; column++){
+        for(int row = 0; row < userSizeInput; row++){
+            if (userInput == 1 && row >= column){
+                continue;
             }
-            cout << endl;
+            cout << "*";
         }
+        cout << endl;
     }
-    else if (userInput == 2){
-        for(int column = 1; column <= userSizeInput; column++){
-            for(int row = 0; row < userSizeInput; row++){
-                cout << "*";
-            }
-            cout << endl;
-        }
-    }
-
     return 0;
 }
